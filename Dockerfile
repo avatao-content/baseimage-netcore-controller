@@ -1,5 +1,7 @@
 FROM avatao/controller:ubuntu-16.04
 
+USER root
+
 RUN apt-get update \
 	&& apt-get install -qy \
 		apt-transport-https \
@@ -7,4 +9,7 @@ RUN apt-get update \
 	&& sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list' \
 	&& apt-get update \
 	&& apt-get install -qy dotnet-sdk-2.0.2
+	
+	
+USER user
 
