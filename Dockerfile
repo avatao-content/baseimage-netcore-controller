@@ -1,4 +1,4 @@
-FROM avatao/ubuntu:16.04
+FROM avatao/controller:ubuntu-16.04
 
 RUN apt-get update \
 	&& apt-get install -qy \
